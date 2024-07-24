@@ -2,3 +2,8 @@
 *.bin
 /.idea/
 /.gradle/
+/.dbdata/
+/out
+.DS_Store
+*.class
+/build

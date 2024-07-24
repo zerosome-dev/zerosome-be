@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  db:
+    image: mysql:8
+    container_name: zerosome-project
+    restart: always
+    environment:
+      MYSQL_DATABASE: zerosome-db-local
+      MYSQL_ROOT_PASSWORD: root
+      TZ: Asia/Seoul
+    volumes:
+      - .dbdata:/var/lib/mysql
+    ports:
+      - '3307:3306'
