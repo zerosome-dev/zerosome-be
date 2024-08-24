@@ -13,5 +13,5 @@ public class AllFoodCategory {
     String d2CategoryCode;
     String d2CategoryName;
     String d2CategoryImage;
-    boolean noOptionYn;
+    Boolean noOptionYn;
 }

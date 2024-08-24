@@ -13,7 +13,7 @@ public interface CategoryJpaRepository extends JpaRepository<CommCode, Long> {
            + "d1.code, d1.codeDesc, d2.code, d2.codeDesc, concat('category/', d2.code,'.png'), d2.subNoOptionYn) "
            + "from COMM_CODE d1 "
            + "left join COMM_CODE d2 on d1.code = d2.superCode "
-           + "where d1.groupCode = 'CTG' and d2.superCode is null "
+           + "where d1.groupCode = 'CTG' and d1.superCode is null "
            + "order by d1.code asc")
     List<AllFoodCategory> findAllFoodCategoryList();
 

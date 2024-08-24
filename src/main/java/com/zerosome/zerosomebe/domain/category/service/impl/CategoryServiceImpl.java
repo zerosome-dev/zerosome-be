@@ -52,7 +52,7 @@ public class CategoryServiceImpl implements CategoryService {
                                                .d2CategoryName(category.getD2CategoryName())
                                                .d2CategoryImage(s3Service.generateGetPresignedUrl(
                                                        category.getD2CategoryImage()))
-                                               .noOptionYn(category.isNoOptionYn())
+                                               .noOptionYn(category.getNoOptionYn())
                                                .build());
         }
 
