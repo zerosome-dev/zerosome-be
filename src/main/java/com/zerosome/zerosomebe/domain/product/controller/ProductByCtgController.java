@@ -40,7 +40,7 @@ public class ProductByCtgController {
             @RequestParam(value = "offset", required = false) Integer offset,
             @Parameter(name = "limit", description = "1번에 조회할 상품 개수(페이지당 상품 개수)", in = ParameterIn.QUERY)
             @RequestParam(value = "limit", required = false) Integer limit,
-            @RequestBody ProductByCtgListRequest filter) {
+            @RequestBody(required = false) ProductByCtgListRequest filter) {
         OffsetPageResponse<List<ProductByCtgResponse>> response = productByCtgService.getProductList(
                 d2categoryCode, offset, limit, filter);
         return ApiResponse.ofSuccess(HttpStatus.OK, response);
