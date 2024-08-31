@@ -44,13 +44,13 @@ public class SecurityConfig {
                                                                new AntPathRequestMatcher(
                                                                        "/api/v1/auth/nickname"),
                                                                new AntPathRequestMatcher("/api/v1/auth/join"),
-                                                               new AntPathRequestMatcher("/api/app/v1/home/*"),
+                                                               new AntPathRequestMatcher("/api/app/v1/home/**"),
                                                                new AntPathRequestMatcher(
-                                                                       "/api/app/v1/category/*"),
+                                                                       "/api/app/v1/category/**"),
                                                                new AntPathRequestMatcher(
-                                                                       "/api/app/v1/filter/*"),
+                                                                       "/api/app/v1/filter/**"),
                                                                new AntPathRequestMatcher(
-                                                                       "/api/app/v1/product/category/*"),
+                                                                       "/api/app/v1/product/category/**"),
                                                                new AntPathRequestMatcher(
                                                                        "/api/app/v1/product/detail/{id}"),
                                                                new AntPathRequestMatcher(
@@ -59,7 +59,7 @@ public class SecurityConfig {
                                                                        "/api/app/v1/review/list/{id}", "GET"),
                                                                new AntPathRequestMatcher("/api/dev-util"),
                                                                new AntPathRequestMatcher(
-                                                                       "/api/local/datadump/*"))
+                                                                       "/api/local/datadump/**"))
                                                        .permitAll()
                                                        .requestMatchers(new AntPathRequestMatcher("/error"))
                                                        .permitAll()
