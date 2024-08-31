@@ -55,6 +55,8 @@ public class SecurityConfig {
                                                                        "/api/app/v1/product/detail/{id}"),
                                                                new AntPathRequestMatcher(
                                                                        "/api/app/v1/review/{id}", "GET"),
+                                                               new AntPathRequestMatcher(
+                                                                       "/api/app/v1/review/list/{id}", "GET"),
                                                                new AntPathRequestMatcher("/api/dev-util"),
                                                                new AntPathRequestMatcher(
                                                                        "/api/local/datadump/*"))

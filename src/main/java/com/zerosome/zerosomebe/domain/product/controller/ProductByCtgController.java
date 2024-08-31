@@ -4,8 +4,8 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,7 +31,7 @@ public class ProductByCtgController {
     private final ProductByCtgService productByCtgService;
 
     @Operation(summary = "하위 카테고리별 상품 목록 조회", description = "주어진 하위(2 Depth) 카테고리 내 상품 목록 조회")
-    @GetMapping("/{d2categoryCode}")
+    @PostMapping("/{d2categoryCode}")
     public ResponseEntity<ApiResponse<OffsetPageResponse<List<ProductByCtgResponse>>>> getProductList(
             @RequestHeader(name = "Authorization", required = false) String accessToken,
             @Parameter(name = "d2categoryCode", description = "하위 카테고리 코드(2 Depth)", in = ParameterIn.PATH)

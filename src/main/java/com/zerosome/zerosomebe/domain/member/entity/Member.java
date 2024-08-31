@@ -84,6 +84,10 @@ public class Member extends ModTimeEntity {
         this.managerYn = true;
     }
 
+    public void updateNickname(String nickname) {
+        this.nickname = nickname;
+    }
+
 
     /* 샘플 데이터 쿼리
 

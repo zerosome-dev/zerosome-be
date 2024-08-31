@@ -41,8 +41,8 @@ public class ProductByCtgServiceImpl implements ProductByCtgService {
                                                             .map(CommCode::getCode).toList()
                                         : List.of(d2categoryCode);
 
-        List<String> brandList = filter.getBrandList();
-        List<String> zeroCtgList = filter.getZeroCtgList();
+        List<String> brandList = filter == null ? null : filter.getBrandList();
+        List<String> zeroCtgList = filter == null ? null : filter.getZeroCtgList();
 
         if (offset == null) {
             offset = 0;
@@ -51,7 +51,7 @@ public class ProductByCtgServiceImpl implements ProductByCtgService {
             limit = 10;
         }
 
-        OrderType orderType = filter.getOrderType();
+        OrderType orderType = filter == null ? null : filter.getOrderType();
         JpaSort sort;
         // Sort orders;
         if (orderType == OrderType.REVIEWHIGH) {

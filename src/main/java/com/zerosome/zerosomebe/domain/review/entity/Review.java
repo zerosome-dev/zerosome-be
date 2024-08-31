@@ -45,6 +45,18 @@ public class Review extends ModTimeEntity {
         return this;
     }
 
+    public void modifyContents(String contents) {
+        this.contents = contents;
+    }
+
+    public void modifyRating(int rating) {
+        this.rating = rating;
+    }
+
+    public void setNotShow() {
+        this.showYn = false;
+    }
+
     /*
        샘플 데이터
 
