@@ -18,6 +18,7 @@ import com.zerosome.zerosomebe.domain.product.repository.ProductJpaRepository;
 import com.zerosome.zerosomebe.domain.product.service.ProductByCtgService;
 import com.zerosome.zerosomebe.global.entity.OffsetPageResponse;
 import com.zerosome.zerosomebe.global.error.exception.CategoryNotFoundException;
+import com.zerosome.zerosomebe.global.error.exception.NotSubCategoryException;
 import com.zerosome.zerosomebe.global.s3.S3Service;
 
 import lombok.RequiredArgsConstructor;
@@ -35,6 +36,10 @@ public class ProductByCtgServiceImpl implements ProductByCtgService {
             (String d2categoryCode, Integer offset, Integer limit, ProductByCtgListRequest filter) {
         CommCode d2Category = commCodeRepository.findFirstByCode(d2categoryCode).orElseThrow(
                 CategoryNotFoundException::new);
+        if (d2Category.getSuperCode() == null) {
+            throw new NotSubCategoryException();
+        }
+        
         List<String> categoryCodeList = d2Category.isSubNoOptionYn()
                                         ? commCodeRepository.findAllBySuperCode(d2Category.getSuperCode())
                                                             .stream()

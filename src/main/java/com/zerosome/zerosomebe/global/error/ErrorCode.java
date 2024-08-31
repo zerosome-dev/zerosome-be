@@ -16,6 +16,7 @@ public enum ErrorCode {
     REVIEW_NOT_FOUND(HttpStatus.NOT_FOUND, "R001", "존재하지 않는 리뷰입니다."),
     NOT_REVIEW_OWNER(HttpStatus.FORBIDDEN, "R002", "리뷰 작성자가 아닙니다."),
     CATEGORY_NOT_FOUND(HttpStatus.NOT_FOUND, "C001", "존재하지 않는 카테고리입니다."),
+    NOT_SUB_CATEGORY(HttpStatus.BAD_REQUEST, "C002", "하위 카테고리가 아닙니다."),
     METHOD_NOT_ALLOWED(HttpStatus.METHOD_NOT_ALLOWED, "REQ02", "잘못된 HTTP 메서드를 호출했습니다."),
     INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "SYS00", "서버 에러가 발생했습니다."),
     SOCIAL_LOGIN_FAILED(HttpStatus.INTERNAL_SERVER_ERROR, "AUTH01", "소셜 로그인에 실패했습니다."),
